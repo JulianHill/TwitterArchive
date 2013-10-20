@@ -1,6 +1,5 @@
 package twitter_loop;
 /**
- * Created with IntelliJ IDEA.
  * User: julian
  * Date: 20.10.13
  * Time: 13:01
@@ -51,9 +50,6 @@ public class Twitter_loop {
      * configuration with provided settings. This configuration builder will be
      * used for next search action to fetch the tweets from twitter.com.
      */
-    static {
-
-    }
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -67,6 +63,7 @@ public class Twitter_loop {
 
         System.out.print("Please choose your Keyword:\t");
 
+        //wait for the keyword
         Scanner input = new Scanner(System.in);
         String keyword = input.nextLine();
 
@@ -103,6 +100,8 @@ public class Twitter_loop {
             initMongoDB();
             items = db.getCollection(keyword);
             items = db.getCollection(keyword);
+
+            //make the tweet_ID unique in the database
             BasicDBObject index = new BasicDBObject("tweet_ID", 1);
             items.ensureIndex(index, new BasicDBObject("unique", true));
 
@@ -168,9 +167,7 @@ public class Twitter_loop {
                     basicObj.put("tweet_ID", tweet.getId());
                     basicObj.put("tweet_text", tweet.getText());
 
-                   // if (mentioned.length > 0) {
-//                    System.out.println("Mentioned length " + mentioned.length + " Mentioned: " + mentioned[0].getName());
-                   // }
+
                     try {
                         items.insert(basicObj);
                     } catch (Exception e) {
@@ -218,7 +215,7 @@ public class Twitter_loop {
         while (cursor.hasNext()) {
             System.out.println(cursor.next());
         }
-        //loadMenu();
+
     }
 
 }
