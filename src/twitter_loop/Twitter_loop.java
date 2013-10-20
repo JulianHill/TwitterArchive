@@ -70,7 +70,7 @@ public class Twitter_loop {
         //  System.out.println("4 - Load Top 5 followed");
         //  System.out.println("5 - Exit");
 
-        System.out.print("Please enter your selection:\t");
+        //System.out.print("Please enter your selection:\t");
 
        // Scanner scanner = new Scanner(System.in);
 
