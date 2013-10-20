@@ -63,19 +63,7 @@ public class Twitter_loop {
 
     public void loadMenu() throws InterruptedException {
 
-        System.out.println("========================================\n\tTwitter Task\n========================================");
-        System.out.println("1 - Load 100 Tweets & save into Mongo DB");
-        //System.out.println("2 - Load Top 5 Retweet");
-        // System.out.println("3 - Load Top 5 mentioned");
-        //  System.out.println("4 - Load Top 5 followed");
-        //  System.out.println("5 - Exit");
-
-        //System.out.print("Please enter your selection:\t");
-
-       // Scanner scanner = new Scanner(System.in);
-
-       // int selection = scanner.nextInt();
-
+        System.out.println("=========\n\tTwitter Archive\n===========");
 
         System.out.print("Please choose your Keyword:\t");
 
@@ -233,16 +221,6 @@ public class Twitter_loop {
         }
         //loadMenu();
     }
-    /*public void getTweetsStatistics() {
-     BasicDBObject query = new BasicDBObject();
-     query.put("retweet_count", -1);
-     query.put("tweet_followers_count", -1);
-     query.put("tweet_mentioned_count", -1);
-     DBCursor cursor = items.find().sort(query).limit(10);
 
-     while (cursor.hasNext()) {
-     System.out.println(cursor.next());
-     }
-     }*/
 }
 
