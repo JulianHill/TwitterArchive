@@ -94,7 +94,6 @@ public class Twitter_loop {
 
         }
 
-
     }
 
     public void connectdb(String keyword)
