@@ -134,7 +134,7 @@ public class Twitter_loop {
 
             try {
                 Query query = new Query(keyword);
-                query.setCount(50);
+                query.setCount(100);
                 QueryResult result;
                 result = twitter.search(query);
                 System.out.println("Getting Tweets...");
