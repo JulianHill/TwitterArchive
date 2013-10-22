@@ -114,14 +114,8 @@ public class Twitter_loop {
         }
     }
 
-    /**
-     * void getTweetByQuery method used to fetch records from twitter.com using
-     * Query class to define query for search param with record count.
-     * QueryResult persist result from twitter and provide into the list to
-     * iterate records 1 by one and later on item.insert is call to store this
-     * BasicDBObject into MongoDB items Collection.
-     *
-     */
+
+
     public void getTweetByQuery(boolean loadRecords, String keyword) throws InterruptedException {
 
 
@@ -159,13 +153,10 @@ public class Twitter_loop {
                         items.insert(basicObj);
                     } catch (Exception e) {
                         System.out.println("MongoDB Connection Error : " + e.getMessage());
-                        //loadMenu();
+
                     }
                 }
-                // Printing fetched records from DB.
-                if (loadRecords) {
-                    getTweetsRecords();
-                }
+
 
             } catch (TwitterException te) {
                 System.out.println("te.getErrorCode() " + te.getErrorCode());
@@ -187,23 +178,6 @@ public class Twitter_loop {
 
 
 
-
-
-
-    /**
-     * void method print fetched records from mongodb This method use the
-     * preloaded items (Collection) for fetching records and print them on
-     * console.
-     */
-    public void getTweetsRecords() throws InterruptedException {
-        BasicDBObject fields = new BasicDBObject("_id", true).append("user_name", true).append("tweet_text", true);
-        DBCursor cursor = items.find(new BasicDBObject(), fields);
-
-        while (cursor.hasNext()) {
-            System.out.println(cursor.next());
-        }
-
-    }
 
 }
 
