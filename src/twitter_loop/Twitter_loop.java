@@ -22,10 +22,7 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class Twitter_loop {
 
-    /**
-     *
-     * author Muhammad.Saifuddin
-     */
+
 
 
     private ConfigurationBuilder cb;
@@ -34,11 +31,6 @@ public class Twitter_loop {
 
 
 
-    public Twitter_loop() {
-
-
-
-    }
 
     /**
      * static block used to construct a connection with tweeter with twitter4j
@@ -49,16 +41,16 @@ public class Twitter_loop {
     public static void main(String[] args) throws InterruptedException {
 
         Twitter_loop taskObj = new Twitter_loop();
+
         taskObj.loadMenu();
     }
 
     public void loadMenu() throws InterruptedException {
 
-        System.out.println("=========\n\tTwitter Archive\n===========");
 
         System.out.print("Please choose your Keyword:\t");
 
-        //wait for the keyword
+
         Scanner input = new Scanner(System.in);
         String keyword = input.nextLine();
 
@@ -94,7 +86,7 @@ public class Twitter_loop {
             // on constructor load initialize MongoDB and load collection
             initMongoDB();
             items = db.getCollection(keyword);
-            items = db.getCollection(keyword);
+
 
             //make the tweet_ID unique in the database
             BasicDBObject index = new BasicDBObject("tweet_ID", 1);
