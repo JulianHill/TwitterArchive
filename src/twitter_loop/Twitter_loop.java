@@ -1,10 +1,5 @@
 package twitter_loop;
-/**
- * User: julian
- * Date: 20.10.13
- * Time: 13:01
- * To change this template use File | Settings | File Templates.
- */
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -24,7 +19,7 @@ import twitter4j.UserMentionEntity;
 import twitter4j.conf.ConfigurationBuilder;
 
 
-        //TEST!!!
+
 public class Twitter_loop {
 
     /**
@@ -121,7 +116,7 @@ public class Twitter_loop {
             System.out.println("Connecting to Mongo DB..");
             Mongo mongo;
             mongo = new Mongo("127.0.0.1");
-            db = mongo.getDB("tweetDB");
+            db = mongo.getDB("tweetDB2");
         } catch (UnknownHostException ex) {
             System.out.println("MongoDB Connection Error :" + ex.getMessage());
         }
