@@ -140,7 +140,7 @@ public class Twitter_loop {
                     basicObj.put("retweet_count", tweet.getRetweetCount());
                     basicObj.put("tweet_followers_count", tweet.getUser().getFollowersCount());
                     basicObj.put("source",tweet.getSource());
-                    basicObj.put("coordinates",tweet.getGeoLocation());
+                    //basicObj.put("coordinates",tweet.getGeoLocation());
 
 
                     UserMentionEntity[] mentioned = tweet.getUserMentionEntities();
@@ -157,6 +157,10 @@ public class Twitter_loop {
                     }
                 }
 
+                // Printing fetched records from DB.
+                if (loadRecords) {
+                    getTweetsRecords();
+                }
 
             } catch (TwitterException te) {
                 System.out.println("te.getErrorCode() " + te.getErrorCode());
@@ -176,7 +180,15 @@ public class Twitter_loop {
         }
     }
 
+    public void getTweetsRecords() throws InterruptedException {
+        BasicDBObject fields = new BasicDBObject("_id", true).append("user_name", true).append("tweet_text", true);
+        DBCursor cursor = items.find(new BasicDBObject(), fields);
 
+        while (cursor.hasNext()) {
+            System.out.println(cursor.next());
+        }
+
+    }
 
 
 }
