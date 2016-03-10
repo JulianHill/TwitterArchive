@@ -57,9 +57,7 @@ public class Twitter_loop {
 
         connectdb(keyword);
 
-        int i = 0;
-
-        while(i < 1)
+        while(true)
         {
             cb = new ConfigurationBuilder();
             cb.setDebugEnabled(true);
